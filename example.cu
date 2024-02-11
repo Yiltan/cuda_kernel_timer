@@ -24,10 +24,10 @@ __global__ void example_kernel(long long int  requested_time_ns,
   long long int start;
   long long int stop;
 
-  start = get_globaltimer();
+  start = read_globaltimer();
 
   do {
-    stop = get_globaltimer();
+    stop = read_globaltimer();
   } while ((stop - start) < requested_time_ns);
   *measured_time_ns = (stop - start);
 }

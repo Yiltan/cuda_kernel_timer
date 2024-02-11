@@ -21,7 +21,7 @@
 #include "cuda_runtime.h"
 
 /* RETURNS: Globaltimer value in nanoseconds */
-__device__ inline long long int get_globaltimer()
+__device__ inline long long int read_globaltimer()
 {
   long long int t;
   asm volatile("mov.u64  %0, %globaltimer;" : "=l"(t));
