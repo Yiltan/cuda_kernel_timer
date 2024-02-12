@@ -1,6 +1,6 @@
 # CUDA Kernel Timer
 
-This header provides easily read a PTX special register to access a 64-bit global nanosecond timer.
+This header provides an interface to easily read a PTX special register to access a 64-bit global nanosecond timer.
 
 The canonical way of measuring how a CUDA Kernel's execution time is to use CUDA Events.
 That measures the execution time of the kernel on the steam boundries.
