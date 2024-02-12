@@ -27,4 +27,22 @@ Requested 100.000000ms, Kernel Timer Measured 100.000771ms, CUDA Events Measured
 ## Include In Your Project
 ```
 #include "cuda_kernel_timer.cuh"
+
+/* Other Headers and Functions */
+
+__global__ void example_kernel(void)
+{
+  long long int start;
+  long long int stop;
+  start = read_globaltimer();
+
+  /* Do Work */
+
+  stop = read_globaltimer();
+
+  long long int total_time;
+  total_time = stop - start;
+}
+
+/* Other Code */
 ```
