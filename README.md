@@ -21,7 +21,7 @@ make
 
 ### Expected Output
 ```
-Requested 100.000000ms, Kernel Timer Measured 100.000771ms, CUDA Events Measured 105.527298ms
+Requested 100.000000ms, Kernel Timer Measured 100.000771ms, CUDA Events Measured 100.145ms
 ```
 
 ## Include In Your Project
