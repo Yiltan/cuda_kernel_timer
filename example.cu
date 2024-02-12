@@ -58,8 +58,11 @@ int main()
   cudaEventSynchronize(stop);
   cudaEventElapsedTime(&milliseconds, start, stop);
 
-  printf("Requested %fms, Kernel Timer Measured %fms, CUDA Events Measured %fms\n",
-         to_ms(requested_time_ns), to_ms(*measured_time_ns), milliseconds);
+  printf("Requested %.6fms, Kernel Timer Measured %.6fms, CUDA Events Measured %.3fms\n",
+         to_ms(requested_time_ns), /* 6DP for 1ns resolution (did not account for float rounding) */
+         to_ms(*measured_time_ns), /* 6DP for 1ns resolution (did not account for float rounding) */
+         milliseconds              /* 3DP for 0.5us resolution */
+        );
   fflush(stdout);
 
   return 0;
